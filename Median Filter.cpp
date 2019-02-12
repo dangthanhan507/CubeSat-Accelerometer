@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <sidekiq_api.h>
 sort(acc_x.begin(), acc_x.end() ) // include with the accelerometer code to sort the values from least to greatest. 
-
+//DELTA_TIME should still be figured out. 
 #define DELTA_TIME 30
 double accel_reading = 0, prev_accel_reading = 0;
 void ask()
@@ -29,7 +29,7 @@ float median(float arr[re])
 void integrate(double &value) 
 {
 	//integrates whatever you want the value variable to be when you put into main 
-	//make sure the angle inputted is the filtered angle and not the raw angle
+	//make sure the value inputted is the filtered angle and not the raw value
 	value+= (accel_reading - prev_accel_reading) * DELTA_TIME;
 }
 int main(int argc, char *argv[])
