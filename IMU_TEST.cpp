@@ -12,10 +12,9 @@ using namespace std;
 #define PULL_NUMBER 360000
 #define SPLIT_MARKER 5
 
-void compFilter(float accel_data, float gyro_data)
+float compFilter(float accel_data, float gyro_data)
 {
-	float finalAngle;
-	finalAngle = GYRO_CONST * gyro_data + ACCEL_CONST * (accel_data);
+	return GYRO_CONST * gyro_data + ACCEL_CONST * (accel_data);
 }
 
 float median(vector<float> arr)
